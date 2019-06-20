@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 class SearchPage extends StatelessWidget {
 
   String title;
-  SearchPage({this.title = '默认搜索'});
+  Map arguments;
+  SearchPage({this.title = '默认搜索',this.arguments});
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +18,7 @@ class SearchPage extends StatelessWidget {
       appBar: AppBar(
         title: Text(this.title),
       ),
-      body: Text('搜索页面区域'),
+      body: Text('123'),
     );
   }
 }
