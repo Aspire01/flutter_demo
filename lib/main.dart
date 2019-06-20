@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_demo_01/pages/search.dart';
 import 'pages/tabs.dart';
 
 /**
@@ -12,7 +13,10 @@ class AppDemo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Taps()
+      home: Taps(),
+      routes:{  // 统一的路由管理
+        '/search':(context) => SearchPage()
+      } ,
     );
   }
 }

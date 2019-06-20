@@ -16,10 +16,8 @@ class _HomePageState extends State<HomePage> {
         children: <Widget>[
           RaisedButton(
             child: Text('跳转到搜索页面'),
-            onPressed: () {
-              Navigator.of(context).push(MaterialPageRoute(
-                builder: (context) => SearchPage(),
-              ));
+            onPressed: () {  // 使用统一的命名路由进行跳转
+              Navigator.pushNamed(context, '/search');
             },
             textTheme: ButtonTextTheme.primary,
             color: Theme.of(context).accentColor,
@@ -30,9 +28,7 @@ class _HomePageState extends State<HomePage> {
           RaisedButton(
             child: Text('跳转到搜索页面并且携带参数'),
             onPressed: () {
-              Navigator.of(context).push(MaterialPageRoute(
-                builder: (context) => SearchPage(title: '传值的搜索',),
-              ));
+
             },
             textTheme: ButtonTextTheme.primary,
             color: Theme.of(context).accentColor,
