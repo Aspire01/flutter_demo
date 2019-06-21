@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_demo_01/pages/button.dart';
 import '../search.dart';
 
 class HomePage extends StatefulWidget {
@@ -31,6 +32,18 @@ class _HomePageState extends State<HomePage> {
                 Navigator.pushNamed(context, '/search',arguments: {
                   'id':123
                 });
+            },
+            textTheme: ButtonTextTheme.primary,
+            color: Theme.of(context).accentColor,
+          ),
+            RaisedButton(
+            child: Text('跳转到按钮演示页面'),
+            onPressed: () {
+              Navigator.of(context).push(
+               MaterialPageRoute(
+                 builder: (context) =>ButtonPage(),
+               )
+              );
             },
             textTheme: ButtonTextTheme.primary,
             color: Theme.of(context).accentColor,
