@@ -35,6 +35,7 @@ class _TextFieldPageState extends State<TextFieldPage> {
             },
           ),
           SizedBox(height: 20,),
+          Divider(height: 1,),
           Container(
             width: double.infinity,
             child: RaisedButton(  // 点击按钮获取表单值
