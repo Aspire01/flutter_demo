@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:dio/dio.dart';
 import 'package:flutter_demo_01/pages/button.dart';
 import 'package:flutter_demo_01/pages/checkbox.dart';
 import 'package:flutter_demo_01/pages/datePicker.dart';
 import 'package:flutter_demo_01/pages/textField.dart';
-import '../search.dart';
+
+Dio dio = new Dio();
 
 class HomePage extends StatefulWidget {
   HomePage({Key key}) : super(key: key);
@@ -12,6 +14,22 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+
+  _getData() async {
+    var ret = await dio.get('https://locally.uieee.com/slides');
+    print(ret);
+
+    // var ret = await dio.post('https://locally.uieee.com/slides'); // 此地址只能通过仅支持git方式进行请求
+    // print(ret);
+  }
+
+  @override
+  Future initState(){
+    // TODO: implement initState
+    super.initState();
+    print(123);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -74,6 +92,14 @@ class _HomePageState extends State<HomePage> {
               Navigator.of(context).push(MaterialPageRoute(
                 builder: (context) => DatePickerPage(),
               ));
+            },
+            textTheme: ButtonTextTheme.primary,
+            color: Theme.of(context).accentColor,
+          ),
+          RaisedButton(
+            child: Text('使用dio请求数据'),
+            onPressed: () {
+              this._getData();
             },
             textTheme: ButtonTextTheme.primary,
             color: Theme.of(context).accentColor,
