@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_demo_01/pages/button.dart';
 import 'package:flutter_demo_01/pages/checkbox.dart';
+import 'package:flutter_demo_01/pages/datePicker.dart';
 import 'package:flutter_demo_01/pages/textField.dart';
 import '../search.dart';
 
@@ -19,7 +20,8 @@ class _HomePageState extends State<HomePage> {
         children: <Widget>[
           RaisedButton(
             child: Text('跳转到搜索页面'),
-            onPressed: () {  // 使用统一的命名路由进行跳转
+            onPressed: () {
+              // 使用统一的命名路由进行跳转
               Navigator.pushNamed(context, '/search');
             },
             textTheme: ButtonTextTheme.primary,
@@ -31,45 +33,47 @@ class _HomePageState extends State<HomePage> {
           RaisedButton(
             child: Text('跳转到搜索页面并且携带参数'),
             onPressed: () {
-                Navigator.pushNamed(context, '/search',arguments: {
-                  'id':123
-                });
+              Navigator.pushNamed(context, '/search', arguments: {'id': 123});
             },
             textTheme: ButtonTextTheme.primary,
             color: Theme.of(context).accentColor,
           ),
-            RaisedButton(
+          RaisedButton(
             child: Text('跳转到按钮演示页面'),
             onPressed: () {
-              Navigator.of(context).push(
-               MaterialPageRoute(
-                 builder: (context) =>ButtonPage(),
-               )
-              );
+              Navigator.of(context).push(MaterialPageRoute(
+                builder: (context) => ButtonPage(),
+              ));
+            },
+            textTheme: ButtonTextTheme.primary,
+            color: Theme.of(context).accentColor,
+          ),
+          RaisedButton(
+            child: Text('跳转到表单演示页面'),
+            onPressed: () {
+              Navigator.of(context).push(MaterialPageRoute(
+                builder: (context) => TextFieldPage(),
+              ));
+            },
+            textTheme: ButtonTextTheme.primary,
+            color: Theme.of(context).accentColor,
+          ),
+          RaisedButton(
+            child: Text('跳转到checkbox演示页面'),
+            onPressed: () {
+              Navigator.of(context).push(MaterialPageRoute(
+                builder: (context) => CheckBoxPage(),
+              ));
             },
             textTheme: ButtonTextTheme.primary,
             color: Theme.of(context).accentColor,
           ),
             RaisedButton(
-            child: Text('跳转到表单演示页面'),
+            child: Text('跳转到日期组件演示页面'),
             onPressed: () {
-              Navigator.of(context).push(
-               MaterialPageRoute(
-                 builder: (context) =>TextFieldPage(),
-               )
-              );
-            },
-            textTheme: ButtonTextTheme.primary,
-            color: Theme.of(context).accentColor,
-          ),
-             RaisedButton(
-            child: Text('跳转到checkbox演示页面'),
-            onPressed: () {
-              Navigator.of(context).push(
-               MaterialPageRoute(
-                 builder: (context) =>CheckBoxPage(),
-               )
-              );
+              Navigator.of(context).push(MaterialPageRoute(
+                builder: (context) => DatePickerPage(),
+              ));
             },
             textTheme: ButtonTextTheme.primary,
             color: Theme.of(context).accentColor,
