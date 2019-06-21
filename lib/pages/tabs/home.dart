@@ -24,9 +24,6 @@ class _HomePageState extends State<HomePage> {
             textTheme: ButtonTextTheme.primary,
             color: Theme.of(context).accentColor,
           ),
-          SizedBox(
-            height: 30,
-          ),
           RaisedButton(
             child: Text('跳转到搜索页面并且携带参数'),
             onPressed: () {
