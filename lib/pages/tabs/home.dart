@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_demo_01/pages/button.dart';
+import 'package:flutter_demo_01/pages/textField.dart';
 import '../search.dart';
 
 class HomePage extends StatefulWidget {
@@ -48,6 +49,19 @@ class _HomePageState extends State<HomePage> {
             textTheme: ButtonTextTheme.primary,
             color: Theme.of(context).accentColor,
           ),
+            RaisedButton(
+            child: Text('跳转到表单演示页面'),
+            onPressed: () {
+              Navigator.of(context).push(
+               MaterialPageRoute(
+                 builder: (context) =>TextFieldPage(),
+               )
+              );
+            },
+            textTheme: ButtonTextTheme.primary,
+            color: Theme.of(context).accentColor,
+          ),
+       
         ],
       ),
     ));
