@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../datePicker.dart';
 import '../search.dart';
 
 class HomePage extends StatefulWidget {
@@ -29,6 +30,16 @@ class _HomePageState extends State<HomePage> {
             onPressed: () {
               Navigator.of(context).push(MaterialPageRoute(
                 builder: (context) => SearchPage(title: '传值的搜索',),
+              ));
+            },
+            textTheme: ButtonTextTheme.primary,
+            color: Theme.of(context).accentColor,
+          ),
+            RaisedButton(
+            child: Text('跳转到日期组件演示页面'),
+            onPressed: () {
+              Navigator.of(context).push(MaterialPageRoute(
+                builder: (context) => DatePickerPage(),
               ));
             },
             textTheme: ButtonTextTheme.primary,
