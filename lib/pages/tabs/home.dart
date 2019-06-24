@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../search.dart';
+import 'package:flutter_demo_01/pages/app_bar.dart';
 
 class HomePage extends StatefulWidget {
   HomePage({Key key}) : super(key: key);
@@ -15,20 +15,10 @@ class _HomePageState extends State<HomePage> {
       child: Column(
         children: <Widget>[
           RaisedButton(
-            child: Text('跳转到搜索页面'),
+            child: Text('跳转到tabbar页面'),
             onPressed: () {
               Navigator.of(context).push(MaterialPageRoute(
-                builder: (context) => SearchPage(),
-              ));
-            },
-            textTheme: ButtonTextTheme.primary,
-            color: Theme.of(context).accentColor,
-          ),
-          RaisedButton(
-            child: Text('跳转到搜索页面并且携带参数'),
-            onPressed: () {
-              Navigator.of(context).push(MaterialPageRoute(
-                builder: (context) => SearchPage(title: '传值的搜索',),
+                builder: (context) => AppBarDemo(),
               ));
             },
             textTheme: ButtonTextTheme.primary,

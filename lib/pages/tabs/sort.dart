@@ -9,8 +9,67 @@ class SortPage extends StatefulWidget {
 class _SortPageState extends State<SortPage> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-       child: Text('分类组件'),
+    return DefaultTabController(
+      length: 4,
+      child: Scaffold(
+        appBar: AppBar(
+          title: Row(
+            children: <Widget>[
+              Expanded(
+                child: TabBar(
+                  indicatorColor:Colors.white,
+                  tabs: <Widget>[
+                    Tab(
+                      text: '热门',
+                    ),
+                    Tab(
+                      text: '推荐',
+                    ),
+                    Tab(
+                      text: '直销',
+                    ),
+                    Tab(
+                      text: '完美',
+                    ),
+                  ],
+                ),
+              )
+            ],
+          ),
+        ),
+        body: TabBarView(
+          children: <Widget>[
+            ListView(
+              children: <Widget>[
+                ListTile(
+                  title: Text('第一个tab'),
+                )
+              ],
+            ),
+            ListView(
+              children: <Widget>[
+                ListTile(
+                  title: Text('第二个tab'),
+                )
+              ],
+            ),
+            ListView(
+              children: <Widget>[
+                ListTile(
+                  title: Text('第三个tab'),
+                )
+              ],
+            ),
+            ListView(
+              children: <Widget>[
+                ListTile(
+                  title: Text('第四个tab'),
+                )
+              ],
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
