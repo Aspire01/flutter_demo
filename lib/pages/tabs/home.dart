@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_demo_01/pages/app_bar.dart';
 
+import '../tab_controller.dart';
+
 class HomePage extends StatefulWidget {
   HomePage({Key key}) : super(key: key);
 
@@ -19,6 +21,16 @@ class _HomePageState extends State<HomePage> {
             onPressed: () {
               Navigator.of(context).push(MaterialPageRoute(
                 builder: (context) => AppBarDemo(),
+              ));
+            },
+            textTheme: ButtonTextTheme.primary,
+            color: Theme.of(context).accentColor,
+          ),
+          RaisedButton(
+            child: Text('跳转到使用tabbar_controller页面'),
+            onPressed: () {
+              Navigator.of(context).push(MaterialPageRoute(
+                builder: (context) => TabBarControllerPage(),
               ));
             },
             textTheme: ButtonTextTheme.primary,

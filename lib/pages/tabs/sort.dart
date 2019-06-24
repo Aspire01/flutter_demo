@@ -10,15 +10,28 @@ class _SortPageState extends State<SortPage> {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: 4,
+      length: 8,
       child: Scaffold(
         appBar: AppBar(
           title: Row(
             children: <Widget>[
               Expanded(
                 child: TabBar(
+                  isScrollable: true, // 配置可滑动
                   indicatorColor:Colors.white,
                   tabs: <Widget>[
+                    Tab(
+                      text: '热门',
+                    ),
+                    Tab(
+                      text: '推荐',
+                    ),
+                    Tab(
+                      text: '直销',
+                    ),
+                    Tab(
+                      text: '完美',
+                    ),
                     Tab(
                       text: '热门',
                     ),
@@ -64,6 +77,34 @@ class _SortPageState extends State<SortPage> {
               children: <Widget>[
                 ListTile(
                   title: Text('第四个tab'),
+                )
+              ],
+            ),
+             ListView(
+              children: <Widget>[
+                ListTile(
+                  title: Text('第五个tab'),
+                )
+              ],
+            ),
+            ListView(
+              children: <Widget>[
+                ListTile(
+                  title: Text('第六个tab'),
+                )
+              ],
+            ),
+            ListView(
+              children: <Widget>[
+                ListTile(
+                  title: Text('第七个tab'),
+                )
+              ],
+            ),
+            ListView(
+              children: <Widget>[
+                ListTile(
+                  title: Text('第八个tab'),
                 )
               ],
             ),
